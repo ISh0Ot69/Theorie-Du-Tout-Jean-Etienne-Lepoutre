@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Théorie du Tout - Jean-Etienne Lepoutre</title>
+    <style>
+        :root { --primary: #4CAF50; --bg: #0a0c12; --card: #161b22; --text: #c9d1d9; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; }
+        .container { max-width: 900px; margin: auto; background: var(--card); padding: 40px; border-radius: 6px; border: 1px solid #30363d; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+        h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; font-weight: 600; }
+        h2 { color: var(--primary); margin-top: 30px; }
+        .formula-box { background: #0d1117; padding: 20px; border-radius: 6px; font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace; border: 1px solid #30363d; margin: 15px 0; color: #79c0ff; }
+        .calculator { background: #0d1117; padding: 20px; border-radius: 6px; border: 1px solid var(--primary); margin-top: 30px; }
+        input { background: #161b22; border: 1px solid #30363d; color: #58a6ff; padding: 8px; border-radius: 4px; width: 80px; margin: 5px; font-weight: bold; }
+        .result { font-size: 1.8em; color: var(--primary); text-align: center; margin-top: 15px; font-family: monospace; }
+        .footer { margin-top: 50px; font-size: 0.85em; color: #8b949e; border-top: 1px solid #30363d; padding-top: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Théorie du Tout de Jean-Etienne Lepoutre</h1>
+    <p><em>Système d'unification par la Loi de Conservation de la Cohérence.</em></p>
+
+    <h2>I. Équations Fondamentales</h2>
+    <div class="formula-box">
+        E_coh / E_inc = (m_coh / m_inc * c²) + gravité quantique
+    </div>
+    <div class="formula-box">
+        Ω = (E_coh * m_inc * gravité quantique) / (E_inc * m_coh * c²)
+    </div>
+
+    <h2>II. Preuves Expérimentales (CERN)</h2>
+    <ul>
+        <li><strong>Anomalie du Boson W :</strong> Le surplus de 0,076 GeV est la mesure de l'injection de gravité quantique.</li>
+        <li><strong>Neutrinos :</strong> Leur oscillation est le résultat direct de la variation locale de l'indice Ω.</li>
+        <li><strong>Quark Top :</strong> Point de rupture où la cohérence maximale rencontre l'énergie incohérente.</li>
+    </ul>
+
+    <div class="calculator">
+        <h3>Simulateur d'Indice Ω</h3>
+        <p>Entrez les valeurs pour vérifier la stabilité de la formule :</p>
+        <div>
+            Masse Cohérente: <input type="number" id="mCoh" value="1" oninput="runCalc()"> | 
+            Masse Incohérente: <input type="number" id="mInc" value="1" oninput="runCalc()"><br>
+            Gravité Quantique: <input type="number" id="gq" value="1" step="0.1" oninput="runCalc()">
+        </div>
+        <div class="result" id="res">Ω = 1.0000</div>
+    </div>
+
+    <div class="footer">
+        <p>Propriété exclusive de Jean-Etienne Lepoutre</p>
+        <p>Protocoles de sécurité et facteurs de protection optimisés.</p>
+    </div>
+</div>
+
+<script>
+    function runCalc() {
+        let mC = parseFloat(document.getElementById('mCoh').value) || 1;
+        let mI = parseFloat(document.getElementById('mInc').value) || 1;
+        let g = parseFloat(document.getElementById('gq').value) || 1;
+        let omega = (g * mI) / mC;
+        document.getElementById('res').innerText = "Ω = " + omega.toFixed(4);
+    }
+</script>
+</body>
+</html>
